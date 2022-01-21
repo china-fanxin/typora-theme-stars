@@ -2,17 +2,17 @@
 @font-face {
   font-family: 'Fira Code';
   font-style: normal;
-  src: local('Fira Code'), url('maize/FiraCode-Regular.ttf') format('ttf');
+  src: local('Fira Code'), url('stars/FiraCode-Regular.ttf') format('ttf');
 }
 /* consola */
 @font-face {
   font-family: 'consola';
-  src: local('consola'), url('maize/consola.ttf') format('ttf');
+  src: local('consola'), url('stars/consola.ttf') format('ttf');
 }
 /* XieKaiTi */
 @font-face {
   font-family: 'XieKaiTi';
-  src: local('XieKaiTi'), url('maize/XieKaiTi.otf') format('otf');
+  src: local('XieKaiTi'), url('stars/XieKaiTi.otf') format('otf');
 }
 
 
