@@ -1,0 +1,482 @@
+/* Fira Code */
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  src: local('Fira Code'), url('maize/FiraCode-Regular.ttf') format('ttf');
+}
+/* consola */
+@font-face {
+  font-family: 'consola';
+  src: local('consola'), url('maize/consola.ttf') format('ttf');
+}
+/* XieKaiTi */
+@font-face {
+  font-family: 'XieKaiTi';
+  src: local('XieKaiTi'), url('maize/XieKaiTi.otf') format('otf');
+}
+
+
+/* 全局属性 */
+:root{
+  --select-text-bg-color: #ea9c9c;
+  --bg-color:  #fafafa;                   /*change background*/
+  --text-color: #333333;                  /*change text color*/
+  --md-char-color: #C7C5C5;               /*change color of meta characetrs like `*` in markdown */
+  --meta-content-color: #5b808d;          /*change color of meta contents like image text or link address in markdown */
+
+  --primary-color: #428bca;               /* color of primary buttons */
+  --primary-btn-border-color: #285e8e;
+  --primary-btn-text-color: #fff;
+
+  --window-border: 1px solid #eee;        /*border for sidebar, etc*/
+
+  --active-file-bg-color: #eee;           /*background color if list item in file tree or file list*/
+  --active-file-text-color: inherit;
+  --active-file-border-color: #777;
+
+  --side-bar-bg-color: var(--bg-color);     /*change background of sidebar*/
+  --item-hover-bg-color: rgba(229, 229, 229, 0.59); /*background of control items wheef7060n hover, like menu in sidebar*/
+  --item-hover-text-color: inherit;
+  --monospace: monospace;                   /*monospace font for codes, fences*/
+}
+::selection {
+	background:#b981d1;
+	color:white
+}
+::-moz-selection {
+	background:#b981d1;
+	color:white
+}
+::-webkit-selection {
+	background:#b981d1;
+	color:white
+}
+
+#write {
+  max-width: 80%;
+  /* max-width: 914px; */
+  font-size: 16px;
+  text-align: left;
+  letter-spacing: 0px;
+  font-family: "Fira Code", "微软雅黑","PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+/*段落*/
+#write p {
+  font-size: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin: 0;
+  line-height: 26px;
+  color: black;
+}
+
+/* 编辑焦点前显示图标 */
+p.md-focus::before {
+	/* 铅笔标识 */
+    /* content: "✏️"; */ 
+	/* 星星标识 */
+    content: "✨";
+    position: absolute;
+    left: -40px;
+}
+
+/* 编辑焦点下划线 */
+.md-focus .md-expand {
+    border-bottom: 2px dashed #ef7060!important;
+}
+
+/* todo item 对齐 */
+#write input[type="checkbox"] {
+  margin-top: calc(1em - 2px);
+  margin-right: 5px;
+  left: -3px;
+}
+
+/*标题*/
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6 {
+  margin: .72em 0;
+  padding: 0px;
+  font-weight: bold;
+  color: black;
+}
+
+/* 自动生成标题序号样式 */
+#write h1::before{
+  font-weight: bold;
+  margin-right: 4px;
+  color: #ef7060;
+}
+
+
+#write h1 {
+  margin: 1.2em 0;
+  font-size: 2rem;
+  border-bottom: 2px solid #ef7060;
+  text-shadow: -1px -1px 1px #801307,2px 2px 1px #cc2714;
+}
+
+/* 变体文本样式 */
+#write h1 span{
+	display: inline-block;
+	font-weight: bold;
+	background: #ef7060;
+	color: #ffffff;
+	padding: 3px 10px 1px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	margin-right: 3px;
+}
+
+/* 自动生成的二级标题序号样式 */
+#write h2::before{
+	font-size: 1.7rem;
+	font-weight: bold;
+	margin-right: 4px;
+	color: #ef7060;
+}
+
+/* 二级标题样式 */
+#write h2 {
+	font-size: 1.7rem;
+	margin: 1em 0;
+	font-weight: bold;
+	color: #ef7060;
+}
+/* 二级标题文本样式 */
+#write h2 span { 
+	padding: 3px 10px 1px;
+}
+
+/* 自动生成的三级标题序号样式 */
+#write h3::before {
+	color: #ef7060;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+/* 三级标题样式 */
+#write h3 {
+	color: #ef7060;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+#write h4 {
+	color: #ef7060;
+	font-size: 1.25rem;
+}
+#write h5 {
+	color: #ef7060;
+	font-size: 1rem;
+}
+#write h6 {
+	color: #ef7060;
+	font-size: 1rem;
+}
+
+/* 列表样式 */
+#write ul {
+	color: #ef7060;
+}
+
+#write ol {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-left: 40px;
+  color: ef7060;
+}
+#write ul {
+  list-style-type: disc;
+}
+#write ul ul {
+  list-style-type: square;
+}
+#write ol {
+  list-style-type: decimal;
+}
+/* 列表内容 */
+#write li section {
+  font-size:15px;
+}
+
+/* 字体加粗前置文本 */
+#write strong::before {
+  content: '「';
+} 
+
+/* 字体加粗样式 */
+#write strong {
+  color: #ef7060;
+  font-weight: bold;
+}
+
+/* 字体加粗后置文本 */
+#write strong::after {
+  content: '」';
+}
+
+/* 下划线样式 */
+#write u {
+  border-bottom: 5px solid #ef7060;
+}
+
+/* 斜体样式 */
+#write em {
+	color: #ef7060;
+	text-shadow:
+    0px 1px 0px #c0c0c0,
+    0px 2px 0px #b0b0b0,
+    0px 3px 0px #a0a0a0,
+    0px 4px 0px #909090,
+    0px 5px 5px #6d6766;
+
+}
+
+/*引用样式*/
+#write blockquote {
+	margin-bottom: 16px;
+	margin-top: 16px;
+	padding: 10px 10px 10px 20px;
+	font-size: 0.9em;
+	border-left: 5px solid #ffb11b;
+	border-top: 2px dotted #ef7060;
+	border-bottom: 2px dotted #ef7060;
+	border-right: 2px dotted #ef7060;
+	border-top-right-radius: 12px;
+	border-top-left-radius: 12px;
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+	color: #6a737d;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+#write blockquote p {
+  line-height: 26px;
+}
+
+/* 超链接样式 */
+#write a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #1f4f89;
+  border-bottom: 1px dotted #1f4f89;
+}
+
+/* 超链接后自动追加图标 */
+#write a::after{
+	content: ' 📌';
+}
+
+/* 分割线样式 */
+#write hr {
+  height: 1px;
+  padding: 0;
+  border: none;
+  text-align: center;
+  background-image: linear-gradient(to right,rgba(231, 93, 109,0.3),rgba(255, 159, 150,0.75),rgba(255, 216, 181,0.3));
+}
+
+/* background-color*/
+#write code{
+	font-size: 14px;
+	color:  rgb(235, 76, 55);
+	background-color: #f0f0f0;
+}
+
+
+
+/* 图片样式 */
+#write img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0px 1px 10px 1px #7e7573;
+  border: 0px;
+}
+
+/* 表格样式 */
+#write table {
+	border: 1px solid #ef7060;
+	border-collapse: separate;
+	text-align: center;
+	border-spacing: 1px 1px;
+	border-radius: 4px;
+}
+
+/* 表头样式 */
+#write table th {
+	font-size: 18px
+	font-weight: bold;
+	color: white;
+	border: 1px solid #cf6255;
+	background: #ef7060;
+	border-radius: 4px;
+}
+
+/* 单元格样式 */
+#write table  td {
+  font-size: 16px;
+  border: 1px solid #ef7060;
+  line-height: 1.5;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+/* 上角标 */
+#write .md-footnote {
+ font-weight: bold;
+ color: #E49123;
+}
+#write .md-footnote > .md-text:before {
+ content: '['
+}
+#write .md-footnote > .md-text:after {
+ content: ']'
+}
+
+
+/* 下角标 */
+#write .md-def-name {
+  padding-right: 1.8ch;
+}
+#write .md-def-name:before {
+  content: '[';
+  color: #000;
+}
+#write .md-def-name:after {
+  color: #000;
+}
+
+
+/* 代码块主题样式 */
+code, .md-fences {
+	padding: .5em;
+	border: 1.5px solid #eee;
+	padding: .1em;
+	border-radius: 8px;
+	margin-left: 0.2em;
+	margin-right: 0.2em;
+	font-family: "Fira Code", "微软雅黑","PingFang SC", "Microsoft YaHei",sans-serif;
+	background-color: #f8f8f8; 
+	box-shadow: 0px 1px 4px 1px #7e7573;
+}
+
+#write pre{
+	color: #000000;
+    line-height: 25px;
+	letter-spacing: 1px;
+	border-bottom: 1px dotted #dabbba;
+}
+
+/* 代码块行样式 */
+pre .CodeMirror-line:hover {
+	background: #f5d9dc;
+}
+
+/* 代码块内鼠标样式 */
+.CodeMirror div.CodeMirror-cursor {
+  border-left: 1px solid #ef7060;
+  z-index: 5;
+}
+
+.CodeMirror-code{
+  /* margin-left: 5px; */
+}
+
+.cm-s-inner .cm-keyword {
+  color: #ef7060;
+  font-weight: bold;
+}
+.cm-s-inner .cm-operator {
+  color: #141414;
+}
+.cm-s-inner .cm-variable-2 {
+  color: #000000;
+}
+.cm-s-inner .cm-variable-3,
+.cm-s-inner .cm-type {
+  color: #f07178;
+}
+.cm-s-inner .cm-builtin {
+  color: #b38b58;
+}
+.cm-s-inner .cm-atom {
+  color: #f78c6c;
+}
+.cm-s-inner .cm-number {
+  color: #0277bd;
+}
+.cm-s-inner .cm-def {
+  color: #82aaff;
+}
+.cm-s-inner .cm-string {
+  color: #689f38;
+}
+.cm-s-inner .cm-string-2 {
+  color: #f07178;
+}
+.cm-s-inner .cm-comment {
+  color: #d6cccc;
+}
+.cm-s-inner .cm-variable {
+  color: #f07178;
+}
+.cm-s-inner .cm-tag {
+  color: #ff5370;
+}
+.cm-s-inner .cm-meta {
+  color: #ffcb6b;
+}
+.cm-s-inner .cm-attribute {
+  color: #c792ea;
+}
+.cm-s-inner .cm-property {
+  color: #c792ea;
+}
+.cm-s-inner .cm-qualifier {
+  color: #decb6b;
+}
+.cm-s-inner .cm-variable-3,
+.cm-s-inner .cm-type {
+  color: #decb6b;
+}
+.cm-s-inner .cm-error {
+  color: rgba(255, 255, 255, 1);
+  background-color: #e9405c;
+}
+
+/*流程图样式*/
+pre[lang='sequence'],
+pre[lang='flow'],
+pre[lang='mermaid']
+{
+  background: #ffffff;
+  color: #333333;
+}
+
+/* 行内代码 */
+
+#write span code::before {
+	content: ' ';
+}
+
+#write span code {
+	color: #b12815;
+	font-weight: bold;
+	word-wrap: break-word;
+	border-radius: 4px;
+	word-break: break-all;
+}
+
+#write span code::after {
+	content: ' ';
+}
